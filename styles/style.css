@@ -448,7 +448,7 @@ select {
 .underline-indicators > .active-hover,
 .underline-indicators > [aria-selected="true"] {
   color: hsl(var(--clr-white) / 1);
-  border-color: hsl(var(--clr-white) / 1);
+ border-color: hsl(var(--clr-white) / 1);
 }
 
 .tab-list {
@@ -474,7 +474,7 @@ select {
 }
 
 .dot-indicators > [aria-selected="true"] {
-  background-color: hsl(var(--clr-white) / 1);
+  /*background-color: hsl(var(--clr-white) / 1);*/
 }
 
 .slider-indicators > * {
@@ -504,9 +504,9 @@ select {
 }
 
 .slider-indicators > [aria-selected="true"] {
-  background-color: hsl(var(--clr-white) / 1);
+  /*background-color: hsl(var(--clr-white) / 1);
   color: black;
-  padding: 4rem;
+  padding: 4rem;*/
 }
 
 .sr-only {
@@ -699,6 +699,86 @@ select {
   }
 }
 
+@media (max-width: 35rem) {
+  .crew-description {
+    width: 40ch;
+  }
+}
+
+
+/* ----------- */
+/* Technology Layout */
+/* ----------- */
+
+.grid-container--technology {
+  grid-template-areas: 
+    "title"
+    "image"
+    "dots"
+    "content";
+}
+
+.grid-container--technology .numbered-title {
+  grid-area: title;
+}
+
+.grid-container--technology > img {
+  grid-area: image;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.grid-container--technology > .slider-indicators {
+  grid-area: dots;
+}
+
+.grid-container--technology > .crew-details {
+  grid-area: content;
+}
+
+.technologyImage1 {
+  display: block;
+}
+
+.technologyImage2 {
+  display: none;
+}
+
+@media (min-width: 35rem) {
+  .technologyImage1 {
+    display: block;
+}
+
+.technologyImage2 {
+    display: none;
+ }
+}
+
+@media (min-width: 45rem) {
+  .grid-container--technology {
+    grid-template-areas: 
+      ". title title ."
+      ". dots image ."
+      ". dots content .";
+  }
+  .slider-indicators {
+    flex-direction: column;
+}
+
+@media (min-width: 35rem) {
+  .slider-indicators {
+    flex-direction: column;
+  }
+  .technologyImage1 {
+    display: none;
+}
+
+.technologyImage2 {
+    display: block;
+ }
+}
+
+
 /* ---------- */
 /* Background images */
 /* ---------- */
@@ -716,14 +796,24 @@ body {
   background-image: url(../assets/destination/background-destination-desktop.jpg);
 }
 
+.technology {
+  background-image: url(../assets/technology/background-technology-mobile.jpg);
+}
+
 @media (min-width: 35rem) {
   .home {
     background-image: url(../assets/home/background-home-tablet.jpg);
+  }
+  .technology {
+    background-image: url(../assets/technology/background-technology-tablet.jpg);
   }
 }
 
 @media (min-width: 45rem) {
   .home {
     background-image: url(../assets/home/background-home-desktop.jpg);
+  }
+  .technology {
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
   }
 }
